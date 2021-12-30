@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+###> doctrine/doctrine-bundle ###
+  db:
+    image: library/postgres:12.0-alpine
+    environment:
+      - TZ=America/Montreal
+      - PGTZ=America/Montreal
+      - POSTGRES_DB=cooking
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_USER=cooking
+    volumes:
+      - db-data:/var/lib/postgresql/data:rw
+      - ./docker/db:/var/tmp
+    ports:
+      - target: 5432
+        published: 5432
+        protocol: tcp
+      # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
+      # - ./docker/db/data:/var/lib/postgresql/data:rw
+###< doctrine/doctrine-bundle ###
+
+volumes:
+###> doctrine/doctrine-bundle ###
+  db-data:
+###< doctrine/doctrine-bundle ###
