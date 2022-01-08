@@ -7,9 +7,9 @@ services:
     environment:
       - TZ=America/Montreal
       - PGTZ=America/Montreal
-      - POSTGRES_DB=cooking
+      - POSTGRES_DB=wine_api
       - POSTGRES_PASSWORD=secret
-      - POSTGRES_USER=cooking
+      - POSTGRES_USER=wine_api
     volumes:
       - db-data:/var/lib/postgresql/data:rw
       - ./docker/db:/var/tmp
