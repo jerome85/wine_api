@@ -3,15 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.32">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <Grants>1||-9223372036854775808|c|G
-1||10|c|G
-1||10|C|G
-1||10|T|G
-13422||-9223372036854775808|c|G
-13422||10|c|G
-13422||10|C|G
-13422||10|T|G</Grants>
-      <IntrospectionStateNumber>489</IntrospectionStateNumber>
+      <IntrospectionStateNumber>494</IntrospectionStateNumber>
       <ServerVersion>12.0</ServerVersion>
       <StartupTime>1641684926</StartupTime>
       <TimeZones>true ACDT
@@ -813,7 +805,7 @@ false posixrules
 13123||10|C|G
 13123||-9223372036854775808|U|G
 13123||10|U|G</Grants>
-      <IntrospectionStateNumber>490</IntrospectionStateNumber>
+      <IntrospectionStateNumber>495</IntrospectionStateNumber>
       <ObjectId>16384</ObjectId>
       <OwnerName>wine_api</OwnerName>
     </database>
@@ -4027,10 +4019,125 @@ false posixrules
     <schema id="245" parent="3" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>490</IntrospectionStateNumber>
+      <IntrospectionStateNumber>495</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>276</StateNumber>
       <OwnerName>wine_api</OwnerName>
     </schema>
+    <sequence id="246" parent="245" name="user_id_seq">
+      <DataType>bigint|0s</DataType>
+      <ObjectId>16391</ObjectId>
+      <StateNumber>492</StateNumber>
+      <OwnerName>wine_api</OwnerName>
+    </sequence>
+    <table id="247" parent="245" name="doctrine_migration_versions">
+      <ObjectId>16385</ObjectId>
+      <StateNumber>491</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>wine_api</OwnerName>
+    </table>
+    <table id="248" parent="245" name="user">
+      <ObjectId>16393</ObjectId>
+      <StateNumber>492</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>wine_api</OwnerName>
+    </table>
+    <column id="249" parent="247" name="version">
+      <DataType>varchar(191)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>491</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="250" parent="247" name="executed_at">
+      <DataType>timestamp(0)|0s</DataType>
+      <DefaultExpression>NULL::timestamp without time zone</DefaultExpression>
+      <Position>2</Position>
+      <StateNumber>491</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="251" parent="247" name="execution_time">
+      <DataType>integer|0s</DataType>
+      <Position>3</Position>
+      <StateNumber>491</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="252" parent="247" name="doctrine_migration_versions_pkey">
+      <ClassIds>3126</ClassIds>
+      <ColNames>version</ColNames>
+      <CollationIds>100</CollationIds>
+      <CollationNames>default</CollationNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16389</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>491</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="253" parent="247" name="doctrine_migration_versions_pkey">
+      <ColNames>version</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16390</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>491</StateNumber>
+      <UnderlyingIndexId>16389</UnderlyingIndexId>
+    </key>
+    <column id="254" parent="248" name="id">
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>492</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="255" parent="248" name="email">
+      <DataType>varchar(180)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>492</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="256" parent="248" name="roles">
+      <DataType>json|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StateNumber>492</StateNumber>
+      <TypeId>114</TypeId>
+    </column>
+    <column id="257" parent="248" name="password">
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StateNumber>492</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="258" parent="248" name="user_pkey">
+      <ClassIds>1978</ClassIds>
+      <ColNames>id</ColNames>
+      <CollationIds>0</CollationIds>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16399</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>492</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <index id="259" parent="248" name="uniq_8d93d649e7927c74">
+      <ClassIds>3126</ClassIds>
+      <ColNames>email</ColNames>
+      <CollationIds>100</CollationIds>
+      <CollationNames>default</CollationNames>
+      <ObjectId>16401</ObjectId>
+      <StateNumber>492</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="260" parent="248" name="user_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16400</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>492</StateNumber>
+      <UnderlyingIndexId>16399</UnderlyingIndexId>
+    </key>
   </database-model>
 </dataSource>
