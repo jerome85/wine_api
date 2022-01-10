@@ -2,7 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1a60e28-f969-4ec8-ba18-5f005660e30e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Cepage.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/CepageProperty.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Country.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Millesime.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Region.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Wine.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/EventSubscriber/UserSubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/CategoryRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/CepagePropertyRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/CepageRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/CountryRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/MillesimeRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/RegionRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/WineRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/api_platform.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/api_platform.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enum/Category.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wine_api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/wine_api.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +40,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -123,8 +147,6 @@
       <path value="$PROJECT_DIR$/vendor/lexik/jwt-authentication-bundle" />
       <path value="$PROJECT_DIR$/vendor/namshi/jose" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
-      <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
-      <path value="$PROJECT_DIR$/vendor/acelaya/doctrine-enum-type" />
     </include_path>
   </component>
   <component name="ProjectId" id="22v3TlO35UjizpvcccmYOWais4p" />
@@ -156,6 +178,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/config/packages" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/EventSubscriber" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="docket-compose" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
@@ -179,7 +204,7 @@
       <workItem from="1640704245098" duration="278000" />
       <workItem from="1640704544545" duration="107000" />
       <workItem from="1640704749173" duration="29172000" />
-      <workItem from="1641681811761" duration="5220000" />
+      <workItem from="1641681811761" duration="20155000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1641685058267</created>
@@ -195,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641740750598</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary=" initial develop branch commit">
+      <created>1641743789184</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1641743789184</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,6 +236,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value=" initial develop branch commit" />
+    <option name="LAST_COMMIT_MESSAGE" value=" initial develop branch commit" />
   </component>
 </project>

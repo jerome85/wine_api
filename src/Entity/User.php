@@ -15,7 +15,11 @@ use Symfony\Component\Serializer\Annotation\Groups;
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: '`user`')]
 #[ApiResource(
-    collectionOperations: [],
+    collectionOperations: [
+        'post' => [
+            'security' => 'is_granted("IS_AUTHENTICATED_ANONYMOUSLY")'
+        ]
+    ],
     itemOperations: [
         'get' => [
             'controller' => NotFoundAction::class,
