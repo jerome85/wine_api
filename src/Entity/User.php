@@ -6,6 +6,8 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use ApiPlatform\Core\Action\NotFoundAction;
 use App\Controller\MeController;
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Lexik\Bundle\JWTAuthenticationBundle\Security\User\JWTUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -59,6 +61,14 @@ class User implements UserInterface, JWTUserInterface
 
     #[ORM\Column(type: 'string')]
     private string $password;
+
+    #[ORM\OneToMany(mappedBy: 'owner', targetEntity: Cellar::class, orphanRemoval: true)]
+    private $cellars;
+
+    public function __construct()
+    {
+        $this->cellars = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -158,5 +168,35 @@ class User implements UserInterface, JWTUserInterface
     public static function createFromPayload($username, array $payload)
     {
         return (new User())->setId($payload['id'])->setEmail($username ?? '');
+    }
+
+    /**
+     * @return Collection|Cellar[]
+     */
+    public function getCellars(): Collection
+    {
+        return $this->cellars;
+    }
+
+    public function addCellar(Cellar $cellar): self
+    {
+        if (!$this->cellars->contains($cellar)) {
+            $this->cellars[] = $cellar;
+            $cellar->setOwner($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCellar(Cellar $cellar): self
+    {
+        if ($this->cellars->removeElement($cellar)) {
+            // set the owning side to null (unless already changed)
+            if ($cellar->getOwner() === $this) {
+                $cellar->setOwner(null);
+            }
+        }
+
+        return $this;
     }
 }
